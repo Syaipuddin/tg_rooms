@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <menuitem name="Room Booking" id="room"/>
+    <menuitem name="Room Booking List" id="tg_room" action="tg_room_list_action" parent="room"/>
+    <menuitem name="Room Order List" id="tg_room_orders" action="tg_room_order_list_action" parent="room"/>
+</odoo>

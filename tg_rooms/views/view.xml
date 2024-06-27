@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="tg_room_list" model="ir.ui.view">
+            <field name="name">tg.rooms.list</field>
+            <field name="model">tg.rooms</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="location" />
+                    <field name="type" />
+                </tree>
+            </field>
+        </record>
+
+<!--         <record id="tg_room_grid" model="ir.ui.view">-->
+<!--            <field name="name">tg.rooms.grid</field>-->
+<!--            <field name="model">tg.rooms</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <grid string="Room Grid">-->
+<!--                    <field name="location" type="row"/>-->
+<!--                    <field name="type" type="col"/>-->
+<!--                    <field name="name"/>-->
+<!--                </grid>-->
+<!--            </field>-->
+<!--        </record>-->
+
+         <record id="tg_room_form" model="ir.ui.view">
+            <field name="name">tg.rooms.form</field>
+            <field name="model">tg.rooms</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Detail Ruangan">
+                            <field name="name" />
+                            <field name="location"/>
+                            <field name="photo" widget="image"/>
+                            <field name="type" />
+                            <field name="capacity" attrs="{'required': [('type', '=', 'big')]}"/>
+                            <field name="note" />
+                        </group>
+                        <group string="Detail Pemesan">
+                            <field name="detail" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tg_room_list_action" model="ir.actions.act_window">
+            <field name="name">HR Master Data</field>
+            <field name="res_model">tg.rooms</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

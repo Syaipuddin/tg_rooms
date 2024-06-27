@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="tg_room_orders_list" model="ir.ui.view">
+            <field name="name">tg.room.orders.list</field>
+            <field name="model">tg.room.orders</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="order_id" />
+                    <field name="name" />
+                    <field name="date" />
+                    <field name="status" />
+                </tree>
+            </field>
+        </record>
+
+         <record id="tg_room_orders_form" model="ir.ui.view">
+            <field name="name">tg.room.orders.form</field>
+            <field name="model">tg.room.orders</field>
+            <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                            <group>
+                                <field name="id" invisible="1" attrs="{'readonly' :[('status', '=', 'done')]}"/>
+                                <field name="order_id" readonly="true" />
+                                <field name="name" required="1" attrs="{'readonly' :[('status', '=', 'done')]}"/>
+                                <field name="room" required="1" attrs="{'readonly' :[('status', '=', 'done')]}"/>
+                                <field name="date" required="1" attrs="{'readonly' :[('status', '=', 'done')]}"/>
+                                <field name="status" invisible="1"/>
+                                <field name="note" attrs="{'readonly' :[('status', '=', 'done')]}" />
+                            </group>
+                            <button name="save_draft" type="object"
+                                    string="Save as Draft" class="btn-primary"
+                                    attrs="{'invisible' :[('id', '>', 0)]}"/>
+                            <span> </span>
+                            <button name="book" string="Book"
+                                type="object"
+                                class="btn-primary" attrs="{'invisible' :[('status', '=', 'done')]}"/>
+
+                        </sheet>
+
+                    </form>
+            </field>
+        </record>
+
+        <record id="tg_room_order_list_action" model="ir.actions.act_window">
+            <field name="name">Room Orders</field>
+            <field name="res_model">tg.room.orders</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+tg_rooms_access_rights,tg.rooms.access.right,model_tg_rooms,hr.group_hr_manager,1,1,1,1
+tg_rooms_access_rights,tg.rooms.access.right,model_tg_rooms,hr.group_hr_user,1,0,0,0
+tg_room_orders_access_rights,tg.room.orders.access.right,model_tg_room_orders,hr.group_hr_manager,1,1,1,1
+tg_room_orders_access_rights,tg.room.orders.access.right,model_tg_room_orders,hr.group_hr_user,1,1,1,1
